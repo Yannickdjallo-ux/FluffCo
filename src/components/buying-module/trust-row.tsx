@@ -19,7 +19,9 @@ export function TrustRow() {
         return (
           <div key={item.label} className="flex items-center gap-1">
             <Icon className="text-coral-300" />
-            <span className="text-b2 text-beige-900">{item.label}</span>
+            <span className="text-[0.875rem] leading-[1.25rem] font-medium text-beige-900">
+              {item.label}
+            </span>
           </div>
         )
       })}
