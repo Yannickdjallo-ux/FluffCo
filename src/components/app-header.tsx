@@ -50,7 +50,7 @@ export function AppHeader() {
         linkHref="#product"
       />
 
-      <div className="border-b border-beige-200 bg-beige-50/95 backdrop-blur-sm">
+      <div className="border-b border-beige-200 bg-beige-50 backdrop-blur-sm">
         <PageContainer className="flex items-center justify-between py-4">
           <Link href="/" className="shrink-0">
             <Image

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { AppHeader } from "@/components/app-header"
-import { pangram, recoleta } from "@/lib/fonts"
+import { pangram, recoleta, recoletaAlt } from "@/lib/fonts"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${recoleta.variable} ${pangram.variable} font-sans antialiased`}
+        className={`${recoleta.variable} ${recoletaAlt.variable} ${pangram.variable} font-sans antialiased`}
       >
         <TooltipProvider>
           <AppHeader />
