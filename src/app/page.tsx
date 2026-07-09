@@ -1,3 +1,4 @@
+import { PageContainer } from "@/components/page-container"
 import Link from "next/link"
 import {
   Card,
@@ -40,7 +41,7 @@ const RECENT_TRANSACTIONS = [
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col gap-8 p-6">
+    <PageContainer className="flex flex-1 flex-col gap-8 py-6">
       {/* Total balance + actions */}
       <section className="space-y-4">
         <h2 className="text-sm font-medium text-muted-foreground">Total balance</h2>
@@ -121,6 +122,6 @@ export default function Home() {
           Provided by Wise Assets Europe
         </p>
       </footer>
-    </div>
+    </PageContainer>
   )
 }
