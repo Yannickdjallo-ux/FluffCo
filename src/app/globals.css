@@ -143,7 +143,7 @@
   --radius: 0.75rem;
 
   /* ShadCN semantic theme */
-  --background: var(--beige-bg);
+  --background: var(--beige-50);
   --foreground: var(--fluff-500);
   --card: var(--beige-50);
   --card-foreground: var(--beige-900);
@@ -250,7 +250,7 @@
     --section-accent: var(--coral-300);
     --section-accent-subtle: var(--coral-100);
     --section-accent-foreground: var(--fluff-500);
-    background-color: var(--beige-bg);
+    background-color: var(--beige-50);
     color: var(--fluff-500);
   }
 
@@ -298,55 +298,67 @@
     font-weight: 600;
   }
 
-  .text-b1 {
-    font-family: var(--font-pangram);
-    font-size: var(--b1-size);
-    line-height: var(--b1-line);
-    font-weight: 500;
-  }
-
-  .text-b2 {
-    font-family: var(--font-pangram);
-    font-size: var(--b2-size);
-    line-height: var(--b2-line);
-    font-weight: 500;
-  }
-
-  .text-b3 {
-    font-family: var(--font-pangram);
-    font-size: var(--b3-size);
-    line-height: var(--b3-line);
-    font-weight: 500;
-  }
-
+  .text-b1,
   .text-b1-bold {
     font-family: var(--font-pangram);
     font-size: var(--b1-size);
     line-height: var(--b1-line);
-    font-weight: 700;
   }
 
+  .text-b1 {
+    font-weight: 500;
+  }
+
+  .text-b2,
   .text-b2-bold {
     font-family: var(--font-pangram);
     font-size: var(--b2-size);
     line-height: var(--b2-line);
-    font-weight: 700;
   }
 
+  .text-b2 {
+    font-weight: 500;
+  }
+
+  .text-b3,
   .text-b3-bold {
     font-family: var(--font-pangram);
     font-size: var(--b3-size);
     line-height: var(--b3-line);
+  }
+
+  .text-b3 {
+    font-weight: 500;
+  }
+
+  .text-b1-bold,
+  .text-b2-bold,
+  .text-b3-bold {
+    font-weight: 700;
+  }
+
+  .text-button {
+    font-family: var(--font-pangram);
+    font-size: var(--b1-size);
+    line-height: var(--b1-line);
     font-weight: 700;
   }
 
   .text-eyebrow {
     font-family: var(--font-pangram);
-    font-size: var(--b3-size);
-    line-height: var(--b3-line);
+    font-size: 14px;
+    line-height: var(--b2-line);
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--beige-600);
+  }
+
+  .text-hero-subhead {
+    font-family: var(--font-recoleta-alt);
+    font-size: 22px;
+    line-height: var(--b1-line);
+    font-weight: 400;
+    color: var(--beige-900);
   }
 }

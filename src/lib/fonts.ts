@@ -7,6 +7,13 @@ export const recoleta = localFont({
   display: "swap",
 })
 
+export const recoletaAlt = localFont({
+  src: "../../public/fonts/Latinotype - Recoleta Alt Regular.otf",
+  variable: "--font-recoleta-alt",
+  weight: "400",
+  display: "swap",
+})
+
 export const pangram = localFont({
   src: [
     {
