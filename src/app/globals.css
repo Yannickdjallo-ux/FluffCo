@@ -7,8 +7,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-pangram);
+  --font-heading: var(--font-recoleta);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -38,6 +38,36 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-section-accent: var(--section-accent);
+  --color-section-accent-subtle: var(--section-accent-subtle);
+  --color-section-accent-foreground: var(--section-accent-foreground);
+  --color-fluff-100: var(--fluff-100);
+  --color-fluff-200: var(--fluff-200);
+  --color-fluff-300: var(--fluff-300);
+  --color-fluff-400: var(--fluff-400);
+  --color-fluff-500: var(--fluff-500);
+  --color-coral-100: var(--coral-100);
+  --color-coral-200: var(--coral-200);
+  --color-coral-300: var(--coral-300);
+  --color-coral-400: var(--coral-400);
+  --color-coral-500: var(--coral-500);
+  --color-maize-100: var(--maize-100);
+  --color-maize-200: var(--maize-200);
+  --color-maize-300: var(--maize-300);
+  --color-maize-400: var(--maize-400);
+  --color-maize-500: var(--maize-500);
+  --color-beige-bg: var(--beige-bg);
+  --color-beige-50: var(--beige-50);
+  --color-beige-100: var(--beige-100);
+  --color-beige-200: var(--beige-200);
+  --color-beige-300: var(--beige-300);
+  --color-beige-400: var(--beige-400);
+  --color-beige-500: var(--beige-500);
+  --color-beige-600: var(--beige-600);
+  --color-beige-700: var(--beige-700);
+  --color-beige-800: var(--beige-800);
+  --color-beige-900: var(--beige-900);
+  --color-beige-950: var(--beige-950);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -48,91 +78,275 @@
 }
 
 /* ==========================================================================
-   DESIGNER NOTE: Theme variables (light mode)
-   All colours use HEX so you can copy values from Figma and paste here.
-   Key variables:
-   — --background / --foreground: page background and text
-   — --primary / --primary-foreground: primary buttons, links, badges (e.g. Wise green)
-   — --secondary, --muted, --accent: secondary UI surfaces
-   — --border, --input, --ring: borders and focus rings
-   — --radius: default border radius (buttons, cards, inputs)
-   — --sidebar-*: sidebar-specific colours
+   FluffCo design tokens
+   Brand: Blue (fluff) | Accents: Coral (light sections), Maize (dark sections)
+   Neutrals: Beige
    ========================================================================== */
 :root {
-  --radius: 0.625rem;
-  --background: #ffffff;
-  --foreground: #252525;
-  --card: #ffffff;
-  --card-foreground: #252525;
-  --popover: #ffffff;
-  --popover-foreground: #252525;
-  --primary: #343434;
-  --primary-foreground: #fafafa;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #343434;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --accent: #f5f5f5;
-  --accent-foreground: #343434;
+  /* Brand blues */
+  --fluff-100: #f1f2fb;
+  --fluff-200: #d2d4f0;
+  --fluff-300: #8b8fcc;
+  --fluff-400: #424680;
+  --fluff-500: #282a43;
+
+  /* Coral — accent on light sections */
+  --coral-100: #fff1f1;
+  --coral-200: #ffc7c8;
+  --coral-300: #ff8082;
+  --coral-400: #9e181a;
+  --coral-500: #420607;
+
+  /* Maize — accent on dark sections */
+  --maize-100: #faf7e6;
+  --maize-200: #fae891;
+  --maize-300: #f2ce12;
+  --maize-400: #ccab08;
+  --maize-500: #332b04;
+
+  /* Beige neutrals */
+  --beige-bg: #f4ede5;
+  --beige-50: #faf8f6;
+  --beige-100: #efeae5;
+  --beige-200: #ded4ca;
+  --beige-300: #c8b8a9;
+  --beige-400: #d4ba9d;
+  --beige-500: #a2876e;
+  --beige-600: #8f745b;
+  --beige-700: #7a6653;
+  --beige-800: #665647;
+  --beige-900: #53473b;
+  --beige-950: #29221c;
+
+  /* Typography — mobile defaults */
+  --h1-size: 2.5rem;
+  --h1-line: 2.75rem;
+  --h1-tracking: -0.09375rem;
+  --h2-size: 2rem;
+  --h2-line: 2.25rem;
+  --h2-tracking: -0.0625rem;
+  --h3-size: 1.625rem;
+  --h3-line: 1.875rem;
+  --h3-tracking: -0.0625rem;
+  --b1-size: 1rem;
+  --b1-line: 1.375rem;
+  --b2-size: 0.875rem;
+  --b2-line: 1.25rem;
+  --b3-size: 0.75rem;
+  --b3-line: 1.125rem;
+
+  /* Section accents (light by default) */
+  --section-accent: var(--coral-300);
+  --section-accent-subtle: var(--coral-100);
+  --section-accent-foreground: var(--fluff-500);
+
+  --radius: 0.75rem;
+
+  /* ShadCN semantic theme */
+  --background: var(--beige-bg);
+  --foreground: var(--fluff-500);
+  --card: var(--beige-50);
+  --card-foreground: var(--beige-900);
+  --popover: var(--beige-50);
+  --popover-foreground: var(--beige-900);
+  --primary: var(--fluff-400);
+  --primary-foreground: #ffffff;
+  --secondary: var(--beige-100);
+  --secondary-foreground: var(--fluff-500);
+  --muted: var(--beige-100);
+  --muted-foreground: var(--beige-600);
+  --accent: var(--beige-200);
+  --accent-foreground: var(--fluff-400);
   --destructive: #dc2626;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #a3a3a3;
-  --chart-1: #e07c2e;
-  --chart-2: #2a9d8f;
-  --chart-3: #3d5a80;
-  --chart-4: #e9c46a;
-  --chart-5: #e76f51;
-  --sidebar: #fafafa;
-  --sidebar-foreground: #252525;
-  --sidebar-primary: #343434;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #f5f5f5;
-  --sidebar-accent-foreground: #343434;
-  --sidebar-border: #e5e5e5;
-  --sidebar-ring: #a3a3a3;
+  --border: var(--beige-200);
+  --input: var(--beige-200);
+  --ring: var(--fluff-300);
+  --chart-1: var(--coral-300);
+  --chart-2: var(--maize-300);
+  --chart-3: var(--fluff-400);
+  --chart-4: var(--beige-400);
+  --chart-5: var(--fluff-300);
+  --sidebar: var(--beige-50);
+  --sidebar-foreground: var(--fluff-500);
+  --sidebar-primary: var(--fluff-400);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--beige-100);
+  --sidebar-accent-foreground: var(--fluff-500);
+  --sidebar-border: var(--beige-200);
+  --sidebar-ring: var(--fluff-300);
 }
 
-/* DESIGNER: Dark mode — add class "dark" to <html> to enable; these vars override :root in dark mode */
+@media (min-width: 768px) {
+  :root {
+    --h1-size: 3.5rem;
+    --h1-line: 3.75rem;
+    --h1-tracking: -0.15625rem;
+    --h2-size: 3rem;
+    --h2-line: 3.25rem;
+    --h2-tracking: -0.125rem;
+    --h3-size: 2.25rem;
+    --h3-line: 2.5rem;
+    --h3-tracking: -0.09375rem;
+    --b1-size: 1.25rem;
+    --b1-line: 1.625rem;
+    --b2-size: 1.125rem;
+    --b2-line: 1.5rem;
+    --b3-size: 1rem;
+    --b3-line: 1.375rem;
+  }
+}
+
 .dark {
-  --background: #252525;
-  --foreground: #fafafa;
-  --card: #343434;
-  --card-foreground: #fafafa;
-  --popover: #343434;
-  --popover-foreground: #fafafa;
-  --primary: #ebebeb;
-  --primary-foreground: #252525;
-  --secondary: #454545;
-  --secondary-foreground: #fafafa;
-  --muted: #454545;
-  --muted-foreground: #a3a3a3;
-  --accent: #454545;
-  --accent-foreground: #fafafa;
+  --background: var(--fluff-500);
+  --foreground: var(--fluff-100);
+  --card: var(--fluff-400);
+  --card-foreground: var(--fluff-100);
+  --popover: var(--fluff-400);
+  --popover-foreground: var(--fluff-100);
+  --primary: var(--maize-300);
+  --primary-foreground: var(--fluff-500);
+  --secondary: var(--fluff-400);
+  --secondary-foreground: var(--fluff-100);
+  --muted: var(--fluff-400);
+  --muted-foreground: var(--fluff-300);
+  --accent: var(--fluff-400);
+  --accent-foreground: var(--maize-200);
   --destructive: #ef4444;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
-  --ring: #737373;
-  --chart-1: #6366f1;
-  --chart-2: #2dd4bf;
-  --chart-3: #e9c46a;
-  --chart-4: #a78bfa;
-  --chart-5: #f87171;
-  --sidebar: #252525;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #6366f1;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #454545;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #737373;
+  --border: var(--fluff-400);
+  --input: var(--fluff-400);
+  --ring: var(--maize-300);
+  --section-accent: var(--maize-300);
+  --section-accent-subtle: var(--maize-100);
+  --section-accent-foreground: var(--fluff-500);
+  --sidebar: var(--fluff-500);
+  --sidebar-foreground: var(--fluff-100);
+  --sidebar-primary: var(--maize-300);
+  --sidebar-primary-foreground: var(--fluff-500);
+  --sidebar-accent: var(--fluff-400);
+  --sidebar-accent-foreground: var(--fluff-100);
+  --sidebar-border: var(--fluff-400);
+  --sidebar-ring: var(--maize-300);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-recoleta);
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .section-light {
+    --section-accent: var(--coral-300);
+    --section-accent-subtle: var(--coral-100);
+    --section-accent-foreground: var(--fluff-500);
+    background-color: var(--beige-bg);
+    color: var(--fluff-500);
+  }
+
+  .section-light-cool {
+    --section-accent: var(--coral-300);
+    --section-accent-subtle: var(--coral-100);
+    --section-accent-foreground: var(--fluff-500);
+    background-color: var(--fluff-100);
+    color: var(--fluff-500);
+  }
+
+  .section-dark {
+    --section-accent: var(--maize-300);
+    --section-accent-subtle: var(--maize-100);
+    --section-accent-foreground: var(--fluff-500);
+    background-color: var(--fluff-500);
+    color: var(--fluff-100);
+  }
+
+  .font-heading {
+    font-family: var(--font-recoleta);
+  }
+
+  .text-h1 {
+    font-family: var(--font-recoleta);
+    font-size: var(--h1-size);
+    line-height: var(--h1-line);
+    letter-spacing: var(--h1-tracking);
+    font-weight: 600;
+  }
+
+  .text-h2 {
+    font-family: var(--font-recoleta);
+    font-size: var(--h2-size);
+    line-height: var(--h2-line);
+    letter-spacing: var(--h2-tracking);
+    font-weight: 600;
+  }
+
+  .text-h3 {
+    font-family: var(--font-recoleta);
+    font-size: var(--h3-size);
+    line-height: var(--h3-line);
+    letter-spacing: var(--h3-tracking);
+    font-weight: 600;
+  }
+
+  .text-b1 {
+    font-family: var(--font-pangram);
+    font-size: var(--b1-size);
+    line-height: var(--b1-line);
+    font-weight: 500;
+  }
+
+  .text-b2 {
+    font-family: var(--font-pangram);
+    font-size: var(--b2-size);
+    line-height: var(--b2-line);
+    font-weight: 500;
+  }
+
+  .text-b3 {
+    font-family: var(--font-pangram);
+    font-size: var(--b3-size);
+    line-height: var(--b3-line);
+    font-weight: 500;
+  }
+
+  .text-b1-bold {
+    font-family: var(--font-pangram);
+    font-size: var(--b1-size);
+    line-height: var(--b1-line);
+    font-weight: 700;
+  }
+
+  .text-b2-bold {
+    font-family: var(--font-pangram);
+    font-size: var(--b2-size);
+    line-height: var(--b2-line);
+    font-weight: 700;
+  }
+
+  .text-b3-bold {
+    font-family: var(--font-pangram);
+    font-size: var(--b3-size);
+    line-height: var(--b3-line);
+    font-weight: 700;
+  }
+
+  .text-eyebrow {
+    font-family: var(--font-pangram);
+    font-size: var(--b3-size);
+    line-height: var(--b3-line);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--beige-600);
   }
 }
