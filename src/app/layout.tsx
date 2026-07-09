@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { AppHeader } from "@/components/app-header"
+import { CartProvider } from "@/lib/cart-context"
 import { pangram, recoleta, recoletaAlt } from "@/lib/fonts"
 import "./globals.css"
 
@@ -15,13 +16,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-beige-50">
       <body
-        className={`${recoleta.variable} ${recoletaAlt.variable} ${pangram.variable} font-sans antialiased`}
+        className={`${recoleta.variable} ${recoletaAlt.variable} ${pangram.variable} bg-beige-50 font-sans text-foreground antialiased`}
       >
         <TooltipProvider>
-          <AppHeader />
-          <main>{children}</main>
+          <CartProvider>
+            <AppHeader />
+            <main className="bg-beige-50">{children}</main>
+          </CartProvider>
         </TooltipProvider>
       </body>
     </html>

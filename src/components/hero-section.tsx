@@ -38,7 +38,7 @@ function FeatureCheckIcon() {
 
 export function HeroSection() {
   return (
-    <section className="section-light grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,700px)_minmax(0,700px)_1fr]">
+    <section className="bg-beige-50 section-light grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,700px)_minmax(0,700px)_1fr]">
       <div className="hidden lg:block" aria-hidden />
 
       <div className="flex flex-col justify-center gap-8 px-5 py-16 md:px-16">

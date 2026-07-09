@@ -56,7 +56,7 @@
   --color-maize-300: var(--maize-300);
   --color-maize-400: var(--maize-400);
   --color-maize-500: var(--maize-500);
-  --color-beige-bg: var(--beige-bg);
+  --color-beige-comp: var(--beige-comp);
   --color-beige-50: var(--beige-50);
   --color-beige-100: var(--beige-100);
   --color-beige-200: var(--beige-200);
@@ -105,7 +105,7 @@
   --maize-500: #332b04;
 
   /* Beige neutrals */
-  --beige-bg: #f4ede5;
+  --beige-comp: #f4ede5;
   --beige-50: #faf8f6;
   --beige-100: #efeae5;
   --beige-200: #ded4ca;
