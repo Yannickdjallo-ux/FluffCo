@@ -3,6 +3,7 @@ import { TrustRow } from "@/components/buying-module/trust-row"
 import { LeafIcon } from "@/components/icons"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
+import { HOW_ITS_MADE_COPY, UPGRADE_PILLOW_CTA } from "@/lib/site-copy"
 import { cn } from "@/lib/utils"
 
 const bodyCopyClass = "text-b1 md:text-[1rem] md:leading-[1.375rem]"
@@ -171,27 +172,19 @@ function TestIcon({ className }: IconProps) {
 const USP_ITEMS = [
   {
     icon: ConciergeIcon,
-    title: "5-star hotel quality",
-    description:
-      "Made to the same standards as luxury hotel pillows — real quality, fair price.",
+    ...HOW_ITS_MADE_COPY.usps[0],
   },
   {
     icon: FilterIcon,
-    title: "Fitted to how you sleep",
-    description:
-      "Pick Firm or Soft Fluff based on how you sleep. No one-size-fits-all guesswork.",
+    ...HOW_ITS_MADE_COPY.usps[1],
   },
   {
     icon: LeafIcon,
-    title: "Certified, humane fluff™",
-    description:
-      "Responsibly sourced down (RDS certified) and fabrics tested for harmful substances (OEKO-TEX). Comfort you can trust.",
+    ...HOW_ITS_MADE_COPY.usps[2],
   },
   {
     icon: TestIcon,
-    title: "Meticulously tested",
-    description:
-      "Tested for height, support, and durability before it ships to you.",
+    ...HOW_ITS_MADE_COPY.usps[3],
   },
 ] as const
 
@@ -253,15 +246,14 @@ export function HowItsMadeSection() {
         <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10">
           <header className="mx-auto flex max-w-[440px] flex-col items-center gap-5 text-center">
             <span className="rounded-md bg-beige-comp px-2 py-1 text-[0.875rem] leading-[1.25rem] font-medium text-fluff-400">
-              How it&apos;s made
+              {HOW_ITS_MADE_COPY.tag}
             </span>
             <div className="flex flex-col gap-2.5">
               <h2 className="text-h3 text-fluff-400 lg:text-h2">
-                Made in the same factories as luxury hotels
+                {HOW_ITS_MADE_COPY.headline}
               </h2>
               <p className={cn(bodyCopyClass, "text-beige-900")}>
-                The kind of pillow top hotels put on their beds — without the
-                hotel markup.
+                {HOW_ITS_MADE_COPY.body}
               </p>
             </div>
           </header>
@@ -280,7 +272,7 @@ export function HowItsMadeSection() {
 
           <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
             <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
-              <ProductCtaLink>Shop the Hotel Pillow</ProductCtaLink>
+              <ProductCtaLink>{UPGRADE_PILLOW_CTA}</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>

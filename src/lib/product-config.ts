@@ -25,13 +25,13 @@ export const FILL_OPTIONS = [
   {
     id: "down-feather" as const,
     label: "Down Feather",
-    description: "Real down fill · soft, lofty, and responsibly sourced",
+    description: "Natural loft · ethically sourced",
     icon: "feather" as const,
   },
   {
     id: "down-alternative" as const,
     label: "Down Alternative",
-    description: "Down-like feel · hypoallergenic and vegan-friendly",
+    description: "Hypoallergenic · vegan-friendly",
     icon: "leaf" as const,
   },
 ] as const
@@ -44,8 +44,8 @@ export const SIZE_OPTIONS = [
 ] as const
 
 export const FIRMNESS_OPTIONS = [
-  { id: "firm" as const, label: "Firm Fluff — best for side sleepers" },
-  { id: "soft" as const, label: "Soft Fluff — best for back and stomach sleepers" },
+  { id: "firm" as const, label: "Firm Fluff" },
+  { id: "soft" as const, label: "Soft Fluff" },
 ] as const
 
 export const QUANTITY_OPTIONS = [
@@ -80,7 +80,7 @@ export function getCompareAtPrice(
   unitPrice: number,
   tier: QuantityTier
 ): number {
-  return unitPrice * 2 * PILLOW_COUNT[tier]
+  return (unitPrice * 2 - 18) * PILLOW_COUNT[tier]
 }
 
 export function formatPrice(amount: number): string {
