@@ -1,4 +1,4 @@
-export const UPGRADE_PILLOW_CTA = "Upgrade your Pillow" as const
+export const SHOP_OUR_HOTEL_PILLOW_CTA = "Shop our Hotel Pillow" as const
 export const CHOOSE_FIRMNESS_CTA = "Choose your firmness" as const
 export const ADD_TO_CART_CTA = "Add to cart" as const
 

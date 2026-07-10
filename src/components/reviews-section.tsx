@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import {
   PRODUCT_RATING_TEXT,
   REVIEWS_COPY,
-  UPGRADE_PILLOW_CTA,
+  SHOP_OUR_HOTEL_PILLOW_CTA,
 } from "@/lib/site-copy"
 import { cn } from "@/lib/utils"
 
@@ -174,7 +174,7 @@ export function ReviewsSection() {
 
           <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
             <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
-              <ProductCtaLink>{UPGRADE_PILLOW_CTA}</ProductCtaLink>
+              <ProductCtaLink>{SHOP_OUR_HOTEL_PILLOW_CTA}</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>

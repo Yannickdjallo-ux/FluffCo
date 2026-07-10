@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { ProductCtaLink } from "@/components/product-cta-link"
 import { Button } from "@/components/ui/button"
-import { HERO_COPY, UPGRADE_PILLOW_CTA } from "@/lib/site-copy"
+import { HERO_COPY, SHOP_OUR_HOTEL_PILLOW_CTA } from "@/lib/site-copy"
 
 function FeatureCheckIcon() {
   return (
@@ -75,7 +75,7 @@ export function HeroSection() {
         </div>
 
         <Button asChild className="w-full lg:w-fit" size="default">
-          <ProductCtaLink>{UPGRADE_PILLOW_CTA}</ProductCtaLink>
+          <ProductCtaLink>{SHOP_OUR_HOTEL_PILLOW_CTA}</ProductCtaLink>
         </Button>
       </div>
     </section>

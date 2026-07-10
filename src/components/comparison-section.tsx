@@ -3,7 +3,7 @@ import { ProductCtaLink } from "@/components/product-cta-link"
 import { TrustRow } from "@/components/buying-module/trust-row"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
-import { COMPARISON_COPY, UPGRADE_PILLOW_CTA } from "@/lib/site-copy"
+import { COMPARISON_COPY, SHOP_OUR_HOTEL_PILLOW_CTA } from "@/lib/site-copy"
 import { cn } from "@/lib/utils"
 
 const bodyCopyClass = "text-b1 md:text-[1rem] md:leading-[1.375rem]"
@@ -255,7 +255,7 @@ export function ComparisonSection() {
 
           <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
             <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
-              <ProductCtaLink>{UPGRADE_PILLOW_CTA}</ProductCtaLink>
+              <ProductCtaLink>{SHOP_OUR_HOTEL_PILLOW_CTA}</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>
