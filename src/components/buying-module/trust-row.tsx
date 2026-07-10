@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils"
 const TRUST_ITEMS = [
   {
     icon: ShieldIcon,
-    label: "30-day money back guarantee",
+    label: "30-night risk-free trial",
   },
   {
     icon: TruckIcon,
-    label: "Free shipping",
+    label: "Free shipping on every order",
   },
 ] as const
 

@@ -25,13 +25,13 @@ export const FILL_OPTIONS = [
   {
     id: "down-feather" as const,
     label: "Down Feather",
-    description: "Natural loft · ethically sourced",
+    description: "Real down fill · soft, lofty, and responsibly sourced",
     icon: "feather" as const,
   },
   {
     id: "down-alternative" as const,
     label: "Down Alternative",
-    description: "Hypoallergenic · vegan-friendly",
+    description: "Down-like feel · hypoallergenic and vegan-friendly",
     icon: "leaf" as const,
   },
 ] as const
@@ -44,8 +44,8 @@ export const SIZE_OPTIONS = [
 ] as const
 
 export const FIRMNESS_OPTIONS = [
-  { id: "firm" as const, label: "Firm Fluff · side sleepers" },
-  { id: "soft" as const, label: "Soft Fluff · back & stomach" },
+  { id: "firm" as const, label: "Firm Fluff — best for side sleepers" },
+  { id: "soft" as const, label: "Soft Fluff — best for back and stomach sleepers" },
 ] as const
 
 export const QUANTITY_OPTIONS = [

@@ -157,13 +157,13 @@ function InfoIcon({ className }: IconProps) {
 }
 
 const LEFT_BENEFITS = [
-  { icon: MoonIcon, label: "Deeper sleep" },
-  { icon: BoneIcon, label: "Spinal alignment" },
+  { icon: MoonIcon, label: "Sleep more deeply" },
+  { icon: BoneIcon, label: "Support your neck and spine" },
 ] as const
 
 const RIGHT_BENEFITS = [
-  { icon: TemperatureIcon, label: "Temperature regulation" },
-  { icon: SparkleIcon, label: "Wake refreshed" },
+  { icon: TemperatureIcon, label: "Stay comfortable all night" },
+  { icon: SparkleIcon, label: "Wake up feeling rested" },
 ] as const
 
 function BenefitItem({
@@ -212,7 +212,7 @@ function WellnessImage() {
       />
       <div className="absolute inset-x-0 bottom-0 flex justify-center p-4">
         <p className={cn(bodyCopyClass, "rounded border border-dashed border-beige-300 bg-beige-50/95 px-3 py-2 text-beige-800")}>
-          *Dr. Maya Ellison is a fictional persona
+          *Dr. Maya Ellison is a fictional expert used for marketing. Replace with a real spokesperson or remove before launch.
         </p>
       </div>
     </div>
@@ -232,7 +232,7 @@ export function WellnessSection() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-1.5">
                 <p className={cn(bodyCopyClass, "text-maize-300")}>
-                  The science of sleeping right
+                  Why your pillow matters
                 </p>
                 <h2 className="text-h3 text-beige-50 lg:text-h2">
                   Sleep isn&apos;t downtime.
@@ -240,9 +240,9 @@ export function WellnessSection() {
                   It&apos;s when everything resets.
                 </h2>
                 <p className={cn(bodyCopyClass, "text-beige-50")}>
-                  Poor sleep quietly taxes your focus, your mood, and how well
-                  your body recovers. The right pillow is the smallest change
-                  with the largest return on how you wake up.
+                  Bad sleep affects your focus, mood, and recovery. The right
+                  pillow is a small change that can make a big difference in how
+                  you feel when you wake up.
                 </p>
               </div>
 
@@ -251,9 +251,9 @@ export function WellnessSection() {
 
             <blockquote className="rounded-[12px] bg-fluff-500 p-5 lg:rounded-tl-none lg:rounded-tr-xl lg:rounded-br-xl lg:rounded-bl-xl">
               <p className={cn(bodyCopyClass, "text-beige-50")}>
-                &ldquo;A pillow&apos;s only job is to keep your head in line with
-                your spine. Match the loft to how you sleep, and your body stops
-                working all night to compensate.&rdquo;
+                &ldquo;A pillow&apos;s only job is to keep your head aligned with
+                your spine. Match the height and firmness to how you sleep, and
+                your body won&apos;t have to work overtime all night.&rdquo;
               </p>
               <footer className={cn(bodyCopyClass, "mt-2 text-beige-50")}>
                 <span className={bodyCopyBoldClass}>Dr. Maya Ellison</span>
@@ -271,8 +271,8 @@ export function WellnessSection() {
               </Button>
               <p className={cn(bodyCopyClass, "flex items-start gap-3 pt-5 text-fluff-100")}>
                 <InfoIcon className="mt-0.5 text-maize-300" />
-                Side sleepers need a firmer, higher loft to keep the spine
-                neutral; back and stomach sleepers need less.
+                Side sleepers usually need a firmer, taller pillow. Back and
+                stomach sleepers usually need something softer and lower.
               </p>
             </div>
           </div>

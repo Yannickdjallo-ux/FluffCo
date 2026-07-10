@@ -3,11 +3,11 @@ import { ProductCtaLink } from "@/components/product-cta-link"
 import { Button } from "@/components/ui/button"
 
 const FEATURES = [
-  "Plush and supportive",
-  "Stays cool and holds shape",
-  "Fitted to how you sleep",
-  "True 5-star hotel quality",
-  "30-night risk-free trial",
+  "Soft and supportive all night",
+  "Stays cool and keeps its shape",
+  "Choose firm or soft for how you sleep",
+  "The same quality you'd find in a 5-star hotel",
+  "Try it at home for 30 nights, risk-free",
 ]
 
 function FeatureCheckIcon() {
@@ -83,8 +83,8 @@ export function HeroSection() {
 
         <Button asChild className="w-full lg:w-fit" size="default">
           <ProductCtaLink>
-            <span className="lg:hidden">Upgrade your Pillow</span>
-            <span className="hidden lg:inline">Shop Hotel Pillow</span>
+            <span className="lg:hidden">Find your pillow</span>
+            <span className="hidden lg:inline">Shop the Hotel Pillow</span>
           </ProductCtaLink>
         </Button>
       </div>
