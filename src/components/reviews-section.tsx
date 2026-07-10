@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+import { ProductCtaLink } from "@/components/product-cta-link"
 import { TrustRow } from "@/components/buying-module/trust-row"
 import { TrustPilotStars } from "@/components/buying-module/trust-pilot-stars"
 import { PageContainer } from "@/components/page-container"
@@ -141,7 +141,7 @@ function ReviewsSummaryDesktop() {
 
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <article className="flex h-[300px] w-full flex-col justify-between rounded-xl border border-beige-100 bg-white px-5 py-6 lg:max-w-[307px]">
+    <article className="flex h-[300px] w-full flex-col justify-between rounded-[12px] border border-beige-100 bg-white px-5 py-6 lg:max-w-[307px] lg:rounded-xl">
       <div className="flex flex-col gap-5">
         <ReviewCardStars />
         <div className="flex flex-col gap-1">
@@ -175,7 +175,7 @@ function ReviewCard({ review }: { review: Review }) {
 export function ReviewsSection() {
   return (
     <section className="bg-beige-50 section-light">
-      <PageContainer className="py-10 lg:pt-20 lg:pb-[152px]">
+      <PageContainer className="py-16 lg:pt-20 lg:pb-[152px]">
         <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-8 lg:gap-10">
           <ReviewsSummaryMobile />
           <ReviewsSummaryDesktop />
@@ -195,9 +195,9 @@ export function ReviewsSection() {
             ))}
           </div>
 
-          <div className="mx-auto flex w-full flex-col items-center">
-            <Button asChild className="w-full max-w-[344px]">
-              <Link href="#product">Shop Hotel Pillow</Link>
+          <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
+            <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
+              <ProductCtaLink>Shop Hotel Pillow</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>

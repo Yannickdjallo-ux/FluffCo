@@ -16,14 +16,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-beige-50">
+    <html lang="en" className="overflow-x-hidden bg-beige-50">
       <body
-        className={`${recoleta.variable} ${recoletaAlt.variable} ${pangram.variable} bg-beige-50 font-sans text-foreground antialiased`}
+        className={`${recoleta.variable} ${recoletaAlt.variable} ${pangram.variable} overflow-x-hidden bg-beige-50 font-sans text-foreground antialiased`}
       >
         <TooltipProvider>
           <CartProvider>
             <AppHeader />
-            <main className="bg-beige-50">{children}</main>
+            <main className="overflow-x-hidden bg-beige-50">{children}</main>
           </CartProvider>
         </TooltipProvider>
       </body>

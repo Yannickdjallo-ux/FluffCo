@@ -86,7 +86,7 @@ export function ProductGallery({ fill }: ProductGalleryProps) {
     <div className="flex w-full flex-col gap-2.5">
       <div
         ref={frameRef}
-        className="relative aspect-[464/496] w-full max-h-[496px] bg-beige-50 lg:h-[496px] lg:max-h-none"
+        className="relative aspect-[464/496] w-full max-h-[496px] overflow-hidden rounded-[12px] bg-beige-50 lg:h-[496px] lg:max-h-none lg:rounded-none"
       >
         <Image
           key={mainImage.src}
@@ -95,7 +95,7 @@ export function ProductGallery({ fill }: ProductGalleryProps) {
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-contain"
+          className="rounded-[12px] object-contain lg:rounded-none"
         />
       </div>
 
@@ -117,7 +117,7 @@ export function ProductGallery({ fill }: ProductGalleryProps) {
               aria-label={image.alt}
               onClick={() => setSelectedThumbIndex(index)}
               className={cn(
-                "relative aspect-square w-full overflow-hidden rounded bg-beige-50",
+                "relative aspect-square w-full overflow-hidden rounded-[12px] bg-beige-50 lg:rounded",
                 selected
                   ? "border-[1.5px] border-coral-300"
                   : "border border-beige-300 hover:border-beige-400"

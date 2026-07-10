@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+import { ProductCtaLink } from "@/components/product-cta-link"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -174,16 +174,18 @@ function BenefitItem({
   label: string
 }) {
   return (
-    <li className="flex items-center gap-2 lg:gap-3">
+    <li className="flex w-fit items-center gap-2 lg:w-auto lg:gap-3">
       <Icon className="text-maize-300" />
-      <span className={cn(bodyCopyClass, "text-beige-50")}>{label}</span>
+      <span className={cn(bodyCopyClass, "whitespace-nowrap text-beige-50")}>
+        {label}
+      </span>
     </li>
   )
 }
 
 function BenefitsGrid() {
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid w-fit max-w-full grid-cols-[auto_auto] gap-x-8 gap-y-6 lg:w-full lg:grid-cols-2 lg:gap-x-16">
       <ul className="flex flex-col gap-6">
         {LEFT_BENEFITS.map((benefit) => (
           <BenefitItem key={benefit.label} {...benefit} />
@@ -200,12 +202,12 @@ function BenefitsGrid() {
 
 function WellnessImage() {
   return (
-    <div className="relative min-h-[300px] w-full overflow-hidden rounded-3xl lg:min-h-[550px] lg:self-stretch">
+    <div className="relative min-h-[300px] w-full overflow-hidden rounded-[12px] lg:min-h-[550px] lg:rounded-3xl lg:self-stretch">
       <Image
-        src="/images/wellness/dr-maya.jpg"
+        src="/images/wellness/Maya.png"
         alt="Dr. Maya Ellison, sleep physiologist"
         fill
-        className="object-cover object-center"
+        className="rounded-[12px] object-cover object-center lg:rounded-3xl"
         sizes="(max-width: 1024px) 100vw, 50vw"
       />
       <div className="absolute inset-x-0 bottom-0 flex justify-center p-4">
@@ -220,8 +222,8 @@ function WellnessImage() {
 export function WellnessSection() {
   return (
     <section className="bg-fluff-400">
-      <PageContainer className="py-[120px]">
-        <div className="flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-16">
+      <PageContainer className="py-16 lg:py-[120px]">
+        <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-16">
           <div className="order-2 lg:order-1">
             <WellnessImage />
           </div>
@@ -247,7 +249,7 @@ export function WellnessSection() {
               <BenefitsGrid />
             </div>
 
-            <blockquote className="rounded-tr-xl rounded-br-xl rounded-bl-xl bg-fluff-500 p-5">
+            <blockquote className="rounded-[12px] bg-fluff-500 p-5 lg:rounded-tl-none lg:rounded-tr-xl lg:rounded-br-xl lg:rounded-bl-xl">
               <p className={cn(bodyCopyClass, "text-beige-50")}>
                 &ldquo;A pillow&apos;s only job is to keep your head in line with
                 your spine. Match the loft to how you sleep, and your body stops
@@ -265,7 +267,7 @@ export function WellnessSection() {
                 variant="secondary"
                 className="w-full bg-beige-50 text-fluff-400 hover:bg-beige-100"
               >
-                <Link href="#product">Choose your firmness</Link>
+                <ProductCtaLink>Choose your firmness</ProductCtaLink>
               </Button>
               <p className={cn(bodyCopyClass, "flex items-start gap-3 pt-5 text-fluff-100")}>
                 <InfoIcon className="mt-0.5 text-maize-300" />

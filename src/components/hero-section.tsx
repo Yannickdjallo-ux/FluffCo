@@ -1,12 +1,12 @@
 import Image from "next/image"
-import Link from "next/link"
+import { ProductCtaLink } from "@/components/product-cta-link"
 import { Button } from "@/components/ui/button"
 
 const FEATURES = [
   "Plush and supportive",
   "Stays cool and holds shape",
   "Fitted to how you sleep",
-  "True 5-star hotel quality for half the price",
+  "True 5-star hotel quality",
   "30-night risk-free trial",
 ]
 
@@ -38,51 +38,55 @@ function FeatureCheckIcon() {
 
 export function HeroSection() {
   return (
-    <section className="bg-beige-50 section-light grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,700px)_minmax(0,700px)_1fr]">
+    <section className="bg-beige-50 section-light flex flex-col gap-8 px-5 py-16 lg:grid lg:grid-cols-[1fr_minmax(0,700px)_minmax(0,700px)_1fr] lg:gap-0 lg:px-0 lg:py-0">
       <div className="hidden lg:block" aria-hidden />
 
-      <div className="flex flex-col justify-center gap-8 px-5 py-10 md:px-16 lg:py-20">
-        <div className="space-y-4">
-          <h1 className="max-w-[400px] text-h2 text-fluff-400">
-            The last pillow you&apos;ll flip at 3 a.m.
-          </h1>
-          <p className="text-hero-subhead">
-            Flat by midnight, lumpy by morning? Not this one.
-          </p>
-        </div>
-
-        <ul className="space-y-3">
-          {FEATURES.map((feature) => (
-            <li key={feature} className="flex items-center gap-3">
-              <FeatureCheckIcon />
-              <span className="text-b2 text-beige-900">{feature}</span>
-            </li>
-          ))}
-        </ul>
-
-        <Button asChild size="lg">
-          <Link href="#product">Shop Hotel Pillow</Link>
-        </Button>
-      </div>
-
-      <div className="relative min-h-[400px] lg:col-span-2 lg:min-h-0">
+      <div className="relative h-[260px] shrink-0 overflow-hidden rounded-[12px] lg:col-span-2 lg:col-start-3 lg:row-start-1 lg:h-auto lg:min-h-0 lg:rounded-none">
         <Image
-          src="/images/Product/Hero.png"
-          alt="FluffCo hotel pillow on a bed with warm natural light"
+          src="/images/Product/white-pillow.png"
+          alt="FluffCo white hotel pillow on a bed with warm natural light"
           fill
           priority
-          className="object-cover object-center"
+          className="rounded-[12px] object-cover object-center lg:rounded-none"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
-        <div className="absolute inset-0 flex items-end justify-end p-6">
+        <div className="absolute inset-0 flex items-end justify-end p-3 lg:p-6">
           <Image
             src="/images/graphics/AptTherapy.png"
             alt="Apartment Therapy Best Overall Pillow award badge"
             width={128}
             height={128}
-            className="h-auto w-32"
+            className="size-20 lg:h-auto lg:w-32"
           />
         </div>
+      </div>
+
+      <div className="flex flex-col gap-10 lg:col-start-2 lg:row-start-1 lg:justify-center lg:gap-8 lg:px-16 lg:py-20">
+        <div className="flex flex-col gap-5">
+          <h1 className="font-heading font-semibold text-fluff-400 max-lg:text-[2.5rem] max-lg:leading-[2.75rem] max-lg:tracking-[-0.09375rem] lg:max-w-[400px] lg:text-[3rem] lg:leading-[3.25rem] lg:tracking-[-0.125rem]">
+            The last pillow you&apos;ll flip at 3 a.m.
+          </h1>
+          <p className="font-[family-name:var(--font-recoleta-alt)] text-[1.25rem] leading-[1.625rem] tracking-[0.03125rem] text-beige-900 lg:text-[1.375rem]">
+            Flat by midnight, lumpy by morning? Not this one.
+          </p>
+          <ul className="space-y-3">
+            {FEATURES.map((feature) => (
+              <li key={feature} className="flex items-center gap-2">
+                <FeatureCheckIcon />
+                <span className="text-[1rem] leading-[1.375rem] text-beige-900 lg:text-[1.125rem]">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <Button asChild className="w-full lg:w-fit" size="default">
+          <ProductCtaLink>
+            <span className="lg:hidden">Upgrade your Pillow</span>
+            <span className="hidden lg:inline">Shop Hotel Pillow</span>
+          </ProductCtaLink>
+        </Button>
       </div>
     </section>
   )

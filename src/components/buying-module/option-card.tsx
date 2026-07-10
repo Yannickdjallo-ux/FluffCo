@@ -34,7 +34,7 @@ export function OptionCard({
       aria-checked={selected}
       onClick={onSelect}
       className={cn(
-        "flex w-full items-center gap-3 rounded-xl bg-beige-50 text-left transition-colors",
+        "flex w-full items-center gap-3 rounded-[12px] bg-beige-50 text-left transition-colors lg:rounded-xl",
         selected
           ? "border-[1.5px] border-coral-300 px-[17px] py-[13px]"
           : "border border-beige-300 px-[17px] py-[13px] hover:border-beige-400"

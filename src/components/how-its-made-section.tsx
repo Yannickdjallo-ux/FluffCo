@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { ProductCtaLink } from "@/components/product-cta-link"
 import { TrustRow } from "@/components/buying-module/trust-row"
 import { LeafIcon } from "@/components/icons"
 import { PageContainer } from "@/components/page-container"
@@ -207,7 +207,7 @@ function UspCard({
   description: string
 }) {
   return (
-    <article className="flex flex-col gap-3 rounded-xl border border-beige-100 bg-white p-6">
+    <article className="flex flex-col gap-3 rounded-[12px] border border-beige-100 bg-white p-6 lg:rounded-xl">
       <Icon className="size-6 text-coral-300" />
       <div className="flex flex-col gap-1.5">
         <h3 className="text-[18px] leading-6 font-bold text-fluff-400">{title}</h3>
@@ -219,14 +219,14 @@ function UspCard({
 
 function ProductVideo() {
   return (
-    <div className="relative mx-auto min-h-[240px] w-[345px] max-w-full overflow-hidden rounded-3xl lg:min-h-[384px] lg:shrink-0 lg:self-stretch">
+    <div className="relative mx-auto aspect-[23/16] w-full max-w-[345px] overflow-hidden rounded-[12px] lg:aspect-auto lg:h-full lg:min-h-[384px] lg:shrink-0 lg:self-stretch lg:rounded-xl">
       <video
         src="/video/product-video.mp4"
         autoPlay
         muted
         loop
         playsInline
-        className="size-full object-cover"
+        className="absolute inset-0 size-full rounded-[12px] object-cover lg:rounded-xl"
         aria-label="Close-up of FluffCo hotel pillow fabric and construction"
       />
     </div>
@@ -249,7 +249,7 @@ export function HowItsMadeSection() {
 
   return (
     <section className="bg-beige-50 section-light">
-      <PageContainer className="px-[104px] py-10 lg:py-20">
+      <PageContainer className="py-16 lg:px-[104px] lg:py-20">
         <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10">
           <header className="mx-auto flex max-w-[440px] flex-col items-center gap-5 text-center">
             <span className="rounded-md bg-beige-comp px-2 py-1 text-[0.875rem] leading-[1.25rem] font-medium text-fluff-400">
@@ -278,9 +278,9 @@ export function HowItsMadeSection() {
             <UspColumn items={rightItems} />
           </div>
 
-          <div className="mx-auto flex w-full flex-col items-center">
-            <Button asChild className="w-[345px]">
-              <Link href="#product">Shop Hotel Pillow</Link>
+          <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
+            <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
+              <ProductCtaLink>Shop Hotel Pillow</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>
