@@ -25,7 +25,7 @@ const REVIEWS: Review[] = [
     name: "Susan C.",
     title: "Best pillow out there",
     review:
-      "As a side sleeper I could never keep my neck straight, the Firm Fluff finally fixed that. Best pillow out there.",
+      "As a side sleeper I could never keep my neck straight — the Firm Fluff finally fixed that.",
     daysAgo: "4 days ago",
   },
   {
@@ -39,7 +39,7 @@ const REVIEWS: Review[] = [
     name: "Patrick M.",
     title: "Shoulder pain is gone",
     review:
-      "The Down Feather cradles my head without going flat. My neck and shoulders genuinely feel looser in the morning, didn't expect a pillow to do that!",
+      "The Down Feather cradles my head without going flat. My neck and shoulders genuinely feel looser in the morning — didn't expect a pillow to make that much difference!",
     daysAgo: "3 weeks ago",
   },
 ]
@@ -197,7 +197,7 @@ export function ReviewsSection() {
 
           <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
             <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
-              <ProductCtaLink>Shop Hotel Pillow</ProductCtaLink>
+              <ProductCtaLink>Shop the Hotel Pillow</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>

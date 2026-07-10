@@ -173,25 +173,25 @@ const USP_ITEMS = [
     icon: ConciergeIcon,
     title: "5-star hotel quality",
     description:
-      "Built on the same lines as luxury hotel pillows. The real thing, minus the hotel price tag.",
+      "Made to the same standards as luxury hotel pillows — real quality, fair price.",
   },
   {
     icon: FilterIcon,
     title: "Fitted to how you sleep",
     description:
-      "Firm Fluff or Soft Fluff, matches to your sleeping position. Not one-size-fits-all.",
+      "Pick Firm or Soft Fluff based on how you sleep. No one-size-fits-all guesswork.",
   },
   {
     icon: LeafIcon,
     title: "Certified, humane fluff™",
     description:
-      "RDS-certified fill and OEKO-TEX tested, comfort you can feel good about.",
+      "Responsibly sourced down (RDS certified) and fabrics tested for harmful substances (OEKO-TEX). Comfort you can trust.",
   },
   {
     icon: TestIcon,
     title: "Meticulously tested",
     description:
-      "Checked for loft, support, and durability before it earns a place on your bed.",
+      "Tested for height, support, and durability before it ships to you.",
   },
 ] as const
 
@@ -257,11 +257,11 @@ export function HowItsMadeSection() {
             </span>
             <div className="flex flex-col gap-2.5">
               <h2 className="text-h3 text-fluff-400 lg:text-h2">
-                Made in the same factories as five-star hotels
+                Made in the same factories as luxury hotels
               </h2>
               <p className={cn(bodyCopyClass, "text-beige-900")}>
-                The same pillow the best hotels put on their beds, for a price
-                that actually makes sense.
+                The kind of pillow top hotels put on their beds — without the
+                hotel markup.
               </p>
             </div>
           </header>
@@ -280,7 +280,7 @@ export function HowItsMadeSection() {
 
           <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
             <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
-              <ProductCtaLink>Shop Hotel Pillow</ProductCtaLink>
+              <ProductCtaLink>Shop the Hotel Pillow</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>

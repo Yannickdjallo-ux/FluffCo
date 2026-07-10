@@ -70,10 +70,10 @@ type ComparisonCard = {
 }
 
 const FLUFFCO_DETAILS: ComparisonDetail[] = [
-  { text: "Genuine quality and pricing", positive: true },
-  { text: "Fitted soft or firm", positive: true },
-  { text: "RDS-certified humane Fluff™", positive: true },
-  { text: "30 nights to fall in love", positive: true },
+  { text: "Hotel quality at a fair price", positive: true },
+  { text: "Choose soft or firm for your sleep style", positive: true },
+  { text: "Responsibly sourced, certified fill", positive: true },
+  { text: "30-night risk-free trial", positive: true },
 ]
 
 const FLUFFCO_DETAILS_MOBILE: ComparisonDetail[] = [
@@ -84,15 +84,15 @@ const FLUFFCO_DETAILS_MOBILE: ComparisonDetail[] = [
 const LUXURY_DETAILS: ComparisonDetail[] = [
   { text: "Genuine hotel quality", positive: true },
   { text: "Over $200 for one pillow", positive: false },
-  { text: "Rarely fitted to your sleep", positive: false },
-  { text: "No trial period", positive: false },
+  { text: "Usually one firmness — not tailored to you", positive: false },
+  { text: "No home trial", positive: false },
 ]
 
 const TYPICAL_DETAILS: ComparisonDetail[] = [
   { text: "Goes flat within months", positive: false },
   { text: "No choice in firmness", positive: false },
-  { text: "Uncertified mystery fill", positive: false },
-  { text: "Replaced within a year", positive: false },
+  { text: "Fill quality often unknown", positive: false },
+  { text: "Often needs replacing within a year", positive: false },
 ]
 
 const DESKTOP_CARDS: ComparisonCard[] = [
@@ -272,8 +272,8 @@ export function ComparisonSection() {
           <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
             <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
               <ProductCtaLink>
-                <span className="lg:hidden">Upgrade your Pillow</span>
-                <span className="hidden lg:inline">Shop Hotel Pillow</span>
+                <span className="lg:hidden">Find your pillow</span>
+                <span className="hidden lg:inline">Shop the Hotel Pillow</span>
               </ProductCtaLink>
             </Button>
             <TrustRow />
