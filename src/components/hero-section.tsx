@@ -41,7 +41,7 @@ export function HeroSection() {
     <section className="bg-beige-50 section-light grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,700px)_minmax(0,700px)_1fr]">
       <div className="hidden lg:block" aria-hidden />
 
-      <div className="flex flex-col justify-center gap-8 px-5 py-16 md:px-16">
+      <div className="flex flex-col justify-center gap-8 px-5 py-10 md:px-16 lg:py-20">
         <div className="space-y-4">
           <h1 className="max-w-[400px] text-h2 text-fluff-400">
             The last pillow you&apos;ll flip at 3 a.m.

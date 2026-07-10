@@ -250,7 +250,7 @@ export function HowItsMadeSection() {
   return (
     <section className="bg-beige-50 section-light">
       <PageContainer className="px-[104px] py-10 lg:py-20">
-        <div className="flex flex-col gap-10">
+        <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10">
           <header className="mx-auto flex max-w-[440px] flex-col items-center gap-5 text-center">
             <span className="rounded-md bg-beige-comp px-2 py-1 text-[0.875rem] leading-[1.25rem] font-medium text-fluff-400">
               How it&apos;s made

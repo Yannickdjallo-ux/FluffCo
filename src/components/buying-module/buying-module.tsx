@@ -149,7 +149,7 @@ export function BuyingModule() {
   const [fill, setFill] = useState<Fill>("down-feather")
 
   return (
-    <section id="product" className="bg-beige-50 section-light py-10 md:py-20">
+    <section id="product" className="bg-beige-50 section-light py-10 lg:py-20">
       <PageContainer>
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
           <ProductGallery key={fill} fill={fill} />
