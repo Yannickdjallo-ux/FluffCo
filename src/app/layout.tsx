@@ -7,7 +7,8 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "FluffCo — 5-Star Hotel Quality Bedding",
-  description: "Premium sleep and wellness bedding for the home.",
+  description:
+    "Hotel-quality pillows designed for better sleep — soft or firm, down or down-alternative, with a 30-night trial.",
 }
 
 export default function RootLayout({

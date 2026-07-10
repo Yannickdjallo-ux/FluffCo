@@ -15,31 +15,31 @@ export const PRODUCT_IMAGES: Record<
 > = {
   "down-feather": {
     src: "/images/Product/down-feather.png",
-    alt: "FluffCo down feather pillow",
+    alt: "FluffCo Hotel Pillow with down feather fill",
   },
   "down-alternative": {
     src: "/images/Product/down-alternative.png",
-    alt: "FluffCo down alternative pillow",
+    alt: "FluffCo Hotel Pillow with down-alternative fill",
   },
 }
 
 export const EXTRA_GALLERY_IMAGE = {
   src: "/images/Product/terracotta.png",
-  alt: "FluffCo pillow in a warm bedroom",
+  alt: "FluffCo Hotel Pillow on terracotta bedding",
 } as const
 
 export const LIFESTYLE_IMAGES = [
   {
     src: "/images/Product/olive.png",
-    alt: "FluffCo pillow on olive bedding",
+    alt: "FluffCo Hotel Pillow on olive bedding",
   },
   {
     src: "/images/Product/brown.png",
-    alt: "FluffCo pillow on neutral bedding",
+    alt: "FluffCo Hotel Pillow on neutral bedding",
   },
   {
     src: "/images/Product/White.png",
-    alt: "Close-up of FluffCo pillow",
+    alt: "Close-up of FluffCo Hotel Pillow stitching and fabric",
   },
 ] as const
 
