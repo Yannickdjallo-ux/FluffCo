@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { ProductCtaLink } from "@/components/product-cta-link"
 import { Button } from "@/components/ui/button"
+import { SHOP_OUR_HOTEL_PILLOW_CTA } from "@/lib/site-copy"
 
 const FEATURES = [
   "Soft and supportive all night",
@@ -82,10 +83,7 @@ export function HeroSection() {
         </div>
 
         <Button asChild className="w-full lg:w-fit" size="default">
-          <ProductCtaLink>
-            <span className="lg:hidden">Find your pillow</span>
-            <span className="hidden lg:inline">Shop the Hotel Pillow</span>
-          </ProductCtaLink>
+          <ProductCtaLink>{SHOP_OUR_HOTEL_PILLOW_CTA}</ProductCtaLink>
         </Button>
       </div>
     </section>
