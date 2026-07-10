@@ -1,14 +1,7 @@
 import Image from "next/image"
 import { ProductCtaLink } from "@/components/product-cta-link"
 import { Button } from "@/components/ui/button"
-
-const FEATURES = [
-  "Plush and supportive",
-  "Stays cool and holds shape",
-  "Fitted to how you sleep",
-  "True 5-star hotel quality",
-  "30-night risk-free trial",
-]
+import { HERO_COPY, UPGRADE_PILLOW_CTA } from "@/lib/site-copy"
 
 function FeatureCheckIcon() {
   return (
@@ -64,13 +57,13 @@ export function HeroSection() {
       <div className="flex flex-col gap-10 lg:col-start-2 lg:row-start-1 lg:justify-center lg:gap-8 lg:px-16 lg:py-20">
         <div className="flex flex-col gap-5">
           <h1 className="font-heading font-semibold text-fluff-400 max-lg:text-[2.5rem] max-lg:leading-[2.75rem] max-lg:tracking-[-0.09375rem] lg:max-w-[400px] lg:text-[3rem] lg:leading-[3.25rem] lg:tracking-[-0.125rem]">
-            The last pillow you&apos;ll flip at 3 a.m.
+            {HERO_COPY.headline}
           </h1>
           <p className="font-[family-name:var(--font-recoleta-alt)] text-[1.25rem] leading-[1.625rem] tracking-[0.03125rem] text-beige-900 lg:text-[1.375rem]">
-            Flat by midnight, lumpy by morning? Not this one.
+            {HERO_COPY.subheadline}
           </p>
           <ul className="space-y-3">
-            {FEATURES.map((feature) => (
+            {HERO_COPY.features.map((feature) => (
               <li key={feature} className="flex items-center gap-2">
                 <FeatureCheckIcon />
                 <span className="text-[1rem] leading-[1.375rem] text-beige-900 lg:text-[1.125rem]">
@@ -82,10 +75,7 @@ export function HeroSection() {
         </div>
 
         <Button asChild className="w-full lg:w-fit" size="default">
-          <ProductCtaLink>
-            <span className="lg:hidden">Upgrade your Pillow</span>
-            <span className="hidden lg:inline">Shop Hotel Pillow</span>
-          </ProductCtaLink>
+          <ProductCtaLink>{UPGRADE_PILLOW_CTA}</ProductCtaLink>
         </Button>
       </div>
     </section>

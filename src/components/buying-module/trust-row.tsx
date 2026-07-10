@@ -1,14 +1,15 @@
 import { ShieldIcon, TruckIcon } from "@/components/icons"
+import { TRUST_COPY } from "@/lib/site-copy"
 import { cn } from "@/lib/utils"
 
 const TRUST_ITEMS = [
   {
-    icon: ShieldIcon,
-    label: "30-day money back guarantee",
+    icon: TruckIcon,
+    label: TRUST_COPY.freeShipping,
   },
   {
-    icon: TruckIcon,
-    label: "Free shipping",
+    icon: ShieldIcon,
+    label: TRUST_COPY.moneyBackGuarantee,
   },
 ] as const
 
@@ -23,7 +24,7 @@ export function TrustRow({ layout = "stacked" }: TrustRowProps) {
         "flex items-center justify-center pt-4",
         layout === "inline"
           ? "flex-row flex-wrap justify-center gap-3 sm:flex-nowrap"
-          : "flex-col gap-1.5"
+          : "flex-col gap-1.5 lg:flex-row lg:flex-nowrap lg:gap-3"
       )}
     >
       {TRUST_ITEMS.map((item) => {

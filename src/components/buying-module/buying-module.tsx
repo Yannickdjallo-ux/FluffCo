@@ -28,6 +28,7 @@ import {
   type QuantityTier,
   type Size,
 } from "@/lib/product-config"
+import { ADD_TO_CART_CTA } from "@/lib/site-copy"
 
 type BuyingControlsProps = {
   fill: Fill
@@ -136,7 +137,7 @@ function BuyingControls({ fill, onFillChange }: BuyingControlsProps) {
           className="w-full"
           onClick={() => addToCart({ fill, size, firmness, quantityTier })}
         >
-          Add to cart
+          {ADD_TO_CART_CTA}
         </Button>
 
         <TrustRow layout="inline" />

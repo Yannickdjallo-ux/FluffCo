@@ -4,45 +4,22 @@ import { TrustRow } from "@/components/buying-module/trust-row"
 import { TrustPilotStars } from "@/components/buying-module/trust-pilot-stars"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
+import {
+  PRODUCT_RATING_TEXT,
+  REVIEWS_COPY,
+  UPGRADE_PILLOW_CTA,
+} from "@/lib/site-copy"
 import { cn } from "@/lib/utils"
 
 const bodyCopyClass = "text-b1 md:text-[1rem] md:leading-[1.375rem]"
-const ratingText = "4.8 · based on 2,341 reviews"
 
 type IconProps = {
   className?: string
 }
 
-type Review = {
-  name: string
-  title: string
-  review: string
-  daysAgo: string
-}
+type Review = (typeof REVIEWS_COPY.reviews)[number]
 
-const REVIEWS: Review[] = [
-  {
-    name: "Susan C.",
-    title: "Best pillow out there",
-    review:
-      "As a side sleeper I could never keep my neck straight, the Firm Fluff finally fixed that. Best pillow out there.",
-    daysAgo: "4 days ago",
-  },
-  {
-    name: "Markus T.",
-    title: "I was skeptical at first",
-    review:
-      "I'd wake up two or three times a night and never knew why. A week on the Soft Fluff and I'm sleeping through. I wake up genuinely rested for the first time in years.",
-    daysAgo: "2 weeks ago",
-  },
-  {
-    name: "Patrick M.",
-    title: "Shoulder pain is gone",
-    review:
-      "The Down Feather cradles my head without going flat. My neck and shoulders genuinely feel looser in the morning, didn't expect a pillow to do that!",
-    daysAgo: "3 weeks ago",
-  },
-]
+const REVIEWS = REVIEWS_COPY.reviews
 
 function VerifiedBuyerIcon({ className }: IconProps) {
   return (
@@ -97,7 +74,7 @@ function ReviewRatingText({ className }: { className?: string }) {
         className
       )}
     >
-      {ratingText}
+      {PRODUCT_RATING_TEXT}
     </p>
   )
 }
@@ -134,7 +111,7 @@ function ReviewsSummaryDesktop() {
         <ReviewRatingText />
         <TrustpilotLogo />
       </div>
-      <h2 className="text-h2 text-fluff-400">What our guests say</h2>
+      <h2 className="text-h2 text-fluff-400">{REVIEWS_COPY.heading}</h2>
     </div>
   )
 }
@@ -182,7 +159,7 @@ export function ReviewsSection() {
 
           <div className="flex flex-col gap-5 lg:hidden">
             <h2 className="text-center text-h3 text-fluff-400">
-              What our guests say
+              {REVIEWS_COPY.heading}
             </h2>
             {REVIEWS.map((review) => (
               <ReviewCard key={review.name} review={review} />
@@ -197,7 +174,7 @@ export function ReviewsSection() {
 
           <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
             <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
-              <ProductCtaLink>Shop Hotel Pillow</ProductCtaLink>
+              <ProductCtaLink>{UPGRADE_PILLOW_CTA}</ProductCtaLink>
             </Button>
             <TrustRow />
           </div>

@@ -44,8 +44,8 @@ export const SIZE_OPTIONS = [
 ] as const
 
 export const FIRMNESS_OPTIONS = [
-  { id: "firm" as const, label: "Firm Fluff · side sleepers" },
-  { id: "soft" as const, label: "Soft Fluff · back & stomach" },
+  { id: "firm" as const, label: "Firm Fluff" },
+  { id: "soft" as const, label: "Soft Fluff" },
 ] as const
 
 export const QUANTITY_OPTIONS = [
@@ -80,7 +80,7 @@ export function getCompareAtPrice(
   unitPrice: number,
   tier: QuantityTier
 ): number {
-  return unitPrice * 2 * PILLOW_COUNT[tier]
+  return (unitPrice * 2 - 18) * PILLOW_COUNT[tier]
 }
 
 export function formatPrice(amount: number): string {
