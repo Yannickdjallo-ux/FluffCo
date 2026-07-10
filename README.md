@@ -1,143 +1,26 @@
-# Wise UI Dashboard — Designer Template
+FluffCo — Single-Product Landing Page
+A single-product landing page for FluffCo Hotel Pillow — 5-star hotel bedding quality at a mass-premium price. Built as a take-home exercise. The page's only job is to sell one product, to cold/paid traffic, without leaning on the discount mechanics the live store relies on.
+The core decision
+FluffCo's live site runs a discount-maximalist playbook — countdown timers, stacked bundle deals, "mystery discount" popups, strikethrough pricing, "only 2% left" urgency. Their own 2026 brand strategy, however, points the opposite way: premium, wellness-led, "quality is felt, not announced." This page is a deliberate expression of that 2026 strategy rather than a mirror of the current store. Where the two conflict, the page follows the brand deck — trading urgency-driven conversion for brand equity, margin, and a more premium read. That divergence is intentional and is the page's central point of view.
+Who it's for & the one job
+Buyer: a quality-over-noise shopper who treats rest as part of wellness, not a luxury indulgence. The page has one job — move a stranger from "who are you" to "add to cart" through a narrative arc (problem → promise → proof → comparison → social proof → risk reversal), with the buy action never more than a scroll or tap away.
+Key CRO / e-commerce decisions
 
-A **Next.js + ShadCN** template that recreates the layout and structure of the Wise dashboard. Use this repo to learn where components live and how to change styling so the UI matches the Wise brand. All core UI is built with [ShadCN](https://ui.shadcn.com/) components and [Tailwind CSS](https://tailwindcss.com/).
+Wellness-led, not luxury-led. The wedge is "better sleep = better waking life," not the generic "feels like a hotel" line every competitor uses. Hotel quality becomes the proof; wellness is the promise.
+Full-price premium, no discount theatre. No countdowns, no strikethroughs, no "% off." Value is carried structurally — a two-tier fill ladder (good/better), a calm "Set of 2" bundle, and a comparison section that anchors price against $300 hotel pillows rather than a fake original price.
+"Fitted" as a through-line. The firmness-to-sleep-position system (Firm Fluff / Soft Fluff) appears in the buy module, the wellness section, the construction section, the comparison, and the reviews — so the differentiator feels authored across the whole page, not bolted on.
+Editorial hero, price revealed after desire. The hero is problem/solution + USPs with no price; the full buy module is its own section directly below. Ready buyers convert immediately via a sticky bar; cold traffic gets the story first.
+Honesty guardrails. The sleep-specialist (Dr. Maya Ellison) is a clearly-labelled fictional persona, not a real clinician; reviews are invented but plausible; the "Trustpilot-style" rating is styled, not a live integration. Claims are grounded in FluffCo's own brand book (e.g. "made in the same factories as five-star hotels") rather than invented.
 
----
+Structure
+Announcement bar → Hero → Buy module → Press → Wellness/Sleep science → How it's made → Comparison → Reviews → Risk reversal → FAQ → Closing CTA → Footer.
+Buy module model: fill × firmness × size × quantity (two fills, two firmnesses, two sizes, single/set). One recurring CTA ("Shop Hotel Pillow") scrolls to the buy module; "Choose your firmness" is a contextual exception in the wellness section; "Add to cart" is the single commit button.
+Two page variants
 
-## Getting started
+Buy-module variant — full on-page configurator and add-to-cart (this build).
+Redirect variant — two product cards linking to the live store, for an ad-traffic hand-off model where the transaction happens on the existing Shopify store.
 
-**Install and run the app:**
-
-```bash
-npm install
-npm run dev
-```
-
-Open **http://localhost:3000** (or the port shown in the terminal) in your browser. You’ll see the Wise-style dashboard: sidebar, header, total balance, currency cards, and transactions list.
-
----
-
-## Project structure
-
-Where to look when you want to change layout or styling:
-
-```
-src/
-├── app/                    # App shell and pages
-│   ├── layout.tsx          # Root layout: sidebar, header, fonts
-│   ├── page.tsx            # Main dashboard content (balance, cards, transactions)
-│   └── globals.css         # Theme variables and base styles ← main place for colours/fonts
-│
-├── components/
-│   ├── app-header.tsx      # Top bar: logo, “Earn” button, user menu
-│   ├── app-sidebar.tsx     # Left nav: Home, Cards, Transactions, Payments (expandable), etc.
-│   │
-│   └── ui/                 # ShadCN primitives (buttons, cards, inputs, etc.)
-│       ├── avatar.tsx
-│       ├── badge.tsx
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── collapsible.tsx
-│       ├── dropdown-menu.tsx
-│       ├── input.tsx
-│       ├── separator.tsx
-│       ├── sheet.tsx
-│       ├── sidebar.tsx     # Sidebar layout + menu components
-│       ├── skeleton.tsx
-│       └── tooltip.tsx
-│
-├── hooks/
-│   └── use-mobile.ts       # Used by sidebar for responsive behaviour
-│
-└── lib/
-    └── utils.ts            # cn() and other helpers
-```
-
----
-
-## What lives where
-
-| What you want to change | Where to edit |
-|-------------------------|---------------|
-| **Overall colours, radius, dark mode** | `src/app/globals.css` — `:root` and `.dark` variables |
-| **Dashboard content** (balance, cards, transactions, footer) | `src/app/page.tsx` |
-| **Header** (logo, Earn button, user block) | `src/components/app-header.tsx` |
-| **Sidebar** (nav items, Payments submenu) | `src/components/app-sidebar.tsx` |
-| **One-off component look** (e.g. a single button or card) | Add Tailwind classes in the file that uses it (e.g. `page.tsx`, `app-header.tsx`) |
-| **Global look of a primitive** (all buttons, all cards) | `src/components/ui/button.tsx`, `src/components/ui/card.tsx`, etc. |
-
----
-
-## How to update styling
-
-### 1. Theme variables (`src/app/globals.css`)
-
-Use this for **brand-wide colours and spacing**. The app uses CSS variables; Tailwind and ShadCN read them via `@theme` in `globals.css`.
-
-**Important variables:**
-
-- **`--primary`** / **`--primary-foreground`** — Primary buttons, links, accents (e.g. “Send”, “Add money”, “Earn €90”). Set these to Wise green for brand alignment.
-- **`--background`** / **`--foreground`** — Page background and main text.
-- **`--card`** / **`--card-foreground`** — Card backgrounds and text (e.g. currency account cards).
-- **`--muted`** / **`--muted-foreground`** — Secondary text and subtle backgrounds.
-- **`--sidebar-*`** — Sidebar background, text, active state, border (e.g. `--sidebar-accent` for the active “Home” item).
-- **`--radius`** — Default border radius (buttons, cards, inputs). Other radii are derived from it (`--radius-sm`, `--radius-lg`, etc.).
-
-All colours use **HEX** (e.g. `#343434`, `#fafafa`) so you can copy values from Figma and paste them into `globals.css`. After changing variables, save and the dev server will hot-reload.
-
-### 2. Tailwind classes on components
-
-For **localised styling** (one section or one component), add Tailwind classes in the file that renders it:
-
-- **`page.tsx`** — e.g. `className="text-3xl font-bold"` on the balance, or `className="bg-muted/50"` on a card.
-- **`app-header.tsx`** — e.g. `className="text-xl font-bold text-primary"` on the logo.
-- **`app-sidebar.tsx`** — e.g. padding, spacing, or active state on nav items.
-
-Use semantic colours so the theme stays consistent: `bg-primary`, `text-muted-foreground`, `border-border`, etc. They all map to the variables in `globals.css`.
-
-### 3. ShadCN component variants
-
-Many ShadCN components support **variants** so you can change style without editing the UI file:
-
-- **Button:** `variant="default" | "outline" | "secondary" | "ghost" | "link"`, `size="default" | "sm" | "lg" | "icon"`.
-- **Badge:** `variant="default" | "secondary" | "destructive" | "outline"`.
-- **Card:** No variants; style via `className` on `Card`, `CardHeader`, `CardContent`, etc.
-
-Example: `<Button variant="outline" size="sm">Request</Button>`. Variant styles are defined in `src/components/ui/button.tsx` (and similar files); you can tweak those classes if you want to change how all “outline” or “secondary” buttons look.
-
-### 4. Changing a ShadCN primitive everywhere
-
-To change how **all** buttons or cards look app-wide, edit the corresponding file in `src/components/ui/`:
-
-- **`button.tsx`** — `buttonVariants` and the default `Button` component.
-- **`card.tsx`** — `Card`, `CardHeader`, `CardContent`, etc. (e.g. border, shadow, padding).
-- **`sidebar.tsx`** — Sidebar width, collapsed state, and menu item styles.
-
-Use the same CSS variables and Tailwind tokens as in `globals.css` so light/dark and theme changes stay consistent.
-
----
-
-## Dashboard layout (summary)
-
-- **Header:** Sidebar toggle, “WISE” wordmark, “Earn €90” button, user avatar + “Carolina Fernandes” with dropdown.
-- **Sidebar:** Home (active), Cards, Transactions, Payments (expandable: Scheduled, Direct Debits, Recurring card payments, Payment requests), Bill splits, Recipients, Insights.
-- **Main:** Total balance + “Send” / “Add money” / “Request”; four currency account cards (EUR, AUD, CAD, GBP); recent transactions list; footer “Provided by Wise Assets Europe.”
-
-Placeholder content (e.g. flag emoji, sample transactions) is in `page.tsx` and can be replaced with real data or assets later.
-
----
-
-## Tech stack
-
-- **Next.js 16** (App Router)
-- **ShadCN UI** (Radix-based components)
-- **Tailwind CSS 4**
-- **TypeScript**
-
----
-
-## Useful links
-
-- [ShadCN UI](https://ui.shadcn.com/) — component docs and theming
-- [Tailwind CSS](https://tailwindcss.com/docs) — utility classes
-- [Next.js App Router](https://nextjs.org/docs/app) — routing and layout
+Design system
+Beige #F4EDE5 page ground, Blue #424680 for copy and primary actions, Coral #FF8080 reserved for accents/selected states, Maize #F2CE12 as the accent on dark sections. Per-section color logic: light sections use navy as the action color and coral as accent; dark (navy) sections use beige as the action color and maize as accent. Type: Recoleta (headlines), PP Pangram Sans (body). Accessibility-driven rule: coral is never a button fill with light text (fails WCAG AA contrast) — it stays an accent only.
+Stack
+Semantic HTML + Tailwind CSS + vanilla JS. Mobile-first responsive. Design in Figma; responsive pass via Figma Make; built in Cursor.
