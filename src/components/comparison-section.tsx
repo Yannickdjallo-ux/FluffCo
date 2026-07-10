@@ -3,7 +3,7 @@ import { ProductCtaLink } from "@/components/product-cta-link"
 import { TrustRow } from "@/components/buying-module/trust-row"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
-import { SHOP_OUR_HOTEL_PILLOW_CTA } from "@/lib/site-copy"
+import { COMPARISON_COPY, SHOP_OUR_HOTEL_PILLOW_CTA } from "@/lib/site-copy"
 import { cn } from "@/lib/utils"
 
 const bodyCopyClass = "text-b1 md:text-[1rem] md:leading-[1.375rem]"
@@ -70,48 +70,31 @@ type ComparisonCard = {
   details: ComparisonDetail[]
 }
 
-const FLUFFCO_DETAILS: ComparisonDetail[] = [
-  { text: "Hotel quality at a fair price", positive: true },
-  { text: "Choose soft or firm for your sleep style", positive: true },
-  { text: "Responsibly sourced, certified fill", positive: true },
-  { text: "30-night risk-free trial", positive: true },
-]
+const FLUFFCO_DETAILS = COMPARISON_COPY.fluffcoDetails.map((text) => ({
+  text,
+  positive: true,
+}))
 
-const FLUFFCO_DETAILS_MOBILE: ComparisonDetail[] = [
-  { text: "5-star hotel quality", positive: true },
-  ...FLUFFCO_DETAILS.slice(1),
-]
+const LUXURY_DETAILS = [...COMPARISON_COPY.luxuryDetails]
 
-const LUXURY_DETAILS: ComparisonDetail[] = [
-  { text: "Genuine hotel quality", positive: true },
-  { text: "Over $200 for one pillow", positive: false },
-  { text: "Usually one firmness — not tailored to you", positive: false },
-  { text: "No home trial", positive: false },
-]
-
-const TYPICAL_DETAILS: ComparisonDetail[] = [
-  { text: "Goes flat within months", positive: false },
-  { text: "No choice in firmness", positive: false },
-  { text: "Fill quality often unknown", positive: false },
-  { text: "Often needs replacing within a year", positive: false },
-]
+const TYPICAL_DETAILS = [...COMPARISON_COPY.typicalDetails]
 
 const DESKTOP_CARDS: ComparisonCard[] = [
   {
     id: "typical",
-    title: "A typical pillow",
+    title: COMPARISON_COPY.typicalTitle,
     variant: "negative",
     details: TYPICAL_DETAILS,
   },
   {
     id: "luxury",
-    title: "Luxury hotel brands",
+    title: COMPARISON_COPY.luxuryTitle,
     variant: "negative",
     details: LUXURY_DETAILS,
   },
   {
     id: "fluffco",
-    title: "FluffCo Hotel Pillow",
+    title: COMPARISON_COPY.fluffcoTitle,
     variant: "featured",
     details: FLUFFCO_DETAILS,
   },
@@ -120,19 +103,19 @@ const DESKTOP_CARDS: ComparisonCard[] = [
 const MOBILE_CARDS: ComparisonCard[] = [
   {
     id: "fluffco",
-    title: "FluffCo Hotel Pillow",
+    title: COMPARISON_COPY.fluffcoTitle,
     variant: "featured",
-    details: FLUFFCO_DETAILS_MOBILE,
+    details: FLUFFCO_DETAILS,
   },
   {
     id: "luxury",
-    title: "Luxury hotel brands",
+    title: COMPARISON_COPY.luxuryTitle,
     variant: "negative",
     details: LUXURY_DETAILS,
   },
   {
     id: "typical",
-    title: "A typical pillow",
+    title: COMPARISON_COPY.typicalTitle,
     variant: "negative",
     details: TYPICAL_DETAILS,
   },
@@ -161,13 +144,13 @@ function ComparisonHero() {
       <div className="relative flex h-full flex-col p-5 lg:justify-end lg:p-8">
         <div className="flex flex-1 flex-col items-center justify-between lg:flex-none lg:items-start lg:justify-end lg:gap-4">
           <h2 className="order-1 text-center text-h3 text-fluff-400 lg:order-2 lg:text-left lg:text-h2">
-            The 5-star standard,
+            {COMPARISON_COPY.headline[0]}
             <br />
-            minus the 5-star price
+            {COMPARISON_COPY.headline[1]}
           </h2>
 
           <span className="order-2 rounded-md border border-fluff-200 bg-fluff-100 px-2 py-1 text-[0.75rem] leading-[1.125rem] font-bold text-fluff-400 lg:order-1 lg:self-start">
-            How we compare
+            {COMPARISON_COPY.tag}
           </span>
         </div>
       </div>

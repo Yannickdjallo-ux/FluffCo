@@ -2,10 +2,15 @@ import Image from "next/image"
 import { ProductCtaLink } from "@/components/product-cta-link"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
+import {
+  CHOOSE_FIRMNESS_CTA,
+  WELLNESS_COPY,
+} from "@/lib/site-copy"
 import { cn } from "@/lib/utils"
 
 const bodyCopyClass = "text-b1 md:text-[1rem] md:leading-[1.375rem]"
-const bodyCopyBoldClass = "text-b1-bold md:text-[1rem] md:leading-[1.375rem]"
+const attributionClass =
+  "text-[14px] leading-[1.25rem] lg:text-[16px] lg:leading-[1.375rem]"
 
 type IconProps = {
   className?: string
@@ -156,15 +161,12 @@ function InfoIcon({ className }: IconProps) {
   )
 }
 
-const LEFT_BENEFITS = [
-  { icon: MoonIcon, label: "Sleep more deeply" },
-  { icon: BoneIcon, label: "Support your neck and spine" },
-] as const
+const BENEFIT_ICONS = [MoonIcon, BoneIcon, TemperatureIcon, SparkleIcon] as const
 
-const RIGHT_BENEFITS = [
-  { icon: TemperatureIcon, label: "Stay comfortable all night" },
-  { icon: SparkleIcon, label: "Wake up feeling rested" },
-] as const
+const BENEFITS = WELLNESS_COPY.benefits.map((label, index) => ({
+  icon: BENEFIT_ICONS[index],
+  label,
+}))
 
 function BenefitItem({
   icon: Icon,
@@ -174,29 +176,20 @@ function BenefitItem({
   label: string
 }) {
   return (
-    <li className="flex w-fit items-center gap-2 lg:w-auto lg:gap-3">
+    <li className="flex items-center gap-2 lg:gap-3">
       <Icon className="text-maize-300" />
-      <span className={cn(bodyCopyClass, "whitespace-nowrap text-beige-50")}>
-        {label}
-      </span>
+      <span className={cn(bodyCopyClass, "text-beige-50")}>{label}</span>
     </li>
   )
 }
 
 function BenefitsGrid() {
   return (
-    <div className="grid w-fit max-w-full grid-cols-[auto_auto] gap-x-8 gap-y-6 lg:w-full lg:grid-cols-2 lg:gap-x-16">
-      <ul className="flex flex-col gap-6">
-        {LEFT_BENEFITS.map((benefit) => (
-          <BenefitItem key={benefit.label} {...benefit} />
-        ))}
-      </ul>
-      <ul className="flex flex-col gap-6">
-        {RIGHT_BENEFITS.map((benefit) => (
-          <BenefitItem key={benefit.label} {...benefit} />
-        ))}
-      </ul>
-    </div>
+    <ul className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6">
+      {BENEFITS.map((benefit) => (
+        <BenefitItem key={benefit.label} {...benefit} />
+      ))}
+    </ul>
   )
 }
 
@@ -212,7 +205,7 @@ function WellnessImage() {
       />
       <div className="absolute inset-x-0 bottom-0 flex justify-center p-4">
         <p className={cn(bodyCopyClass, "rounded border border-dashed border-beige-300 bg-beige-50/95 px-3 py-2 text-beige-800")}>
-          *Dr. Maya Ellison is a fictional expert used for marketing. Replace with a real spokesperson or remove before launch.
+          {WELLNESS_COPY.disclaimer}
         </p>
       </div>
     </div>
@@ -232,17 +225,15 @@ export function WellnessSection() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-1.5">
                 <p className={cn(bodyCopyClass, "text-maize-300")}>
-                  Why your pillow matters
+                  {WELLNESS_COPY.eyebrow}
                 </p>
                 <h2 className="text-h3 text-beige-50 lg:text-h2">
-                  Sleep isn&apos;t downtime.
+                  {WELLNESS_COPY.headline[0]}
                   <br />
-                  It&apos;s when everything resets.
+                  {WELLNESS_COPY.headline[1]}
                 </h2>
                 <p className={cn(bodyCopyClass, "text-beige-50")}>
-                  Bad sleep affects your focus, mood, and recovery. The right
-                  pillow is a small change that can make a big difference in how
-                  you feel when you wake up.
+                  {WELLNESS_COPY.body}
                 </p>
               </div>
 
@@ -251,13 +242,11 @@ export function WellnessSection() {
 
             <blockquote className="rounded-[12px] bg-fluff-500 p-5 lg:rounded-tl-none lg:rounded-tr-xl lg:rounded-br-xl lg:rounded-bl-xl">
               <p className={cn(bodyCopyClass, "text-beige-50")}>
-                &ldquo;A pillow&apos;s only job is to keep your head aligned with
-                your spine. Match the height and firmness to how you sleep, and
-                your body won&apos;t have to work overtime all night.&rdquo;
+                &ldquo;{WELLNESS_COPY.quote}&rdquo;
               </p>
-              <footer className={cn(bodyCopyClass, "mt-2 text-beige-50")}>
-                <span className={bodyCopyBoldClass}>Dr. Maya Ellison</span>
-                <span className="text-maize-300"> · Sleep physiologist</span>
+              <footer className={cn(attributionClass, "mt-2 text-beige-50")}>
+                <span className="font-bold">{WELLNESS_COPY.expertName}</span>
+                <span className="text-maize-300"> · {WELLNESS_COPY.expertTitle}</span>
               </footer>
             </blockquote>
 
@@ -267,12 +256,11 @@ export function WellnessSection() {
                 variant="secondary"
                 className="w-full bg-beige-50 text-fluff-400 hover:bg-beige-100"
               >
-                <ProductCtaLink>Choose your firmness</ProductCtaLink>
+                <ProductCtaLink>{CHOOSE_FIRMNESS_CTA}</ProductCtaLink>
               </Button>
               <p className={cn(bodyCopyClass, "flex items-start gap-3 pt-5 text-fluff-100")}>
                 <InfoIcon className="mt-0.5 text-maize-300" />
-                Side sleepers usually need a firmer, taller pillow. Back and
-                stomach sleepers usually need something softer and lower.
+                {WELLNESS_COPY.firmnessTip}
               </p>
             </div>
           </div>
