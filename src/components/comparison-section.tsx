@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+import { ProductCtaLink } from "@/components/product-cta-link"
 import { TrustRow } from "@/components/buying-module/trust-row"
 import { PageContainer } from "@/components/page-container"
 import { Button } from "@/components/ui/button"
@@ -139,12 +139,12 @@ const MOBILE_CARDS: ComparisonCard[] = [
 
 function ComparisonHero() {
   return (
-    <div className="relative h-[440px] w-full overflow-hidden rounded-3xl lg:h-[300px]">
+    <div className="relative h-[440px] w-full overflow-hidden rounded-[12px] lg:h-[300px] lg:rounded-3xl">
       <Image
         src="/images/comparisson/Woman-bed-2.png"
         alt=""
         fill
-        className="object-cover object-center lg:hidden"
+        className="rounded-[12px] object-cover object-center lg:hidden lg:rounded-none"
         sizes="100vw"
         priority={false}
       />
@@ -152,7 +152,7 @@ function ComparisonHero() {
         src="/images/comparisson/woman-bed-1.png"
         alt=""
         fill
-        className="hidden object-cover object-center lg:block"
+        className="hidden rounded-[12px] object-cover object-center lg:block lg:rounded-none"
         sizes="(max-width: 1024px) 100vw, 1120px"
         priority={false}
       />
@@ -208,7 +208,7 @@ function ComparisonCardView({ card }: { card: ComparisonCard }) {
   return (
     <article
       className={cn(
-        "flex flex-col rounded-2xl",
+        "flex flex-col rounded-[12px] lg:rounded-2xl",
         isFeatured
           ? "border-[1.5px] border-fluff-200 bg-fluff-100 p-[1.5px]"
           : "border border-coral-200 bg-coral-100 p-px"
@@ -256,7 +256,7 @@ function ComparisonCards({
 export function ComparisonSection() {
   return (
     <section className="bg-beige-50 section-light">
-      <PageContainer className="py-10 lg:py-20">
+      <PageContainer className="py-16 lg:py-20">
         <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-8 lg:gap-10">
           <ComparisonHero />
 
@@ -269,12 +269,12 @@ export function ComparisonSection() {
             className="hidden gap-8 lg:grid lg:grid-cols-3"
           />
 
-          <div className="mx-auto flex w-full flex-col items-center">
-            <Button asChild className="w-full max-w-[344px]">
-              <Link href="#product">
+          <div className="mx-auto flex w-full flex-col items-stretch lg:items-center">
+            <Button asChild className="w-full lg:w-fit lg:max-w-[344px]">
+              <ProductCtaLink>
                 <span className="lg:hidden">Upgrade your Pillow</span>
                 <span className="hidden lg:inline">Shop Hotel Pillow</span>
-              </Link>
+              </ProductCtaLink>
             </Button>
             <TrustRow />
           </div>

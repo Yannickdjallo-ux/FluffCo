@@ -96,7 +96,7 @@ export function formatBundlePriceLabel(
     return formatPrice(total)
   }
   const perPillow = total / PILLOW_COUNT[tier]
-  return `${formatPrice(total)} · ${formatPrice(perPillow)} each`
+  return `${formatPrice(perPillow)} each`
 }
 
 export function getVariantKey(

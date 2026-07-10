@@ -111,7 +111,7 @@ function BuyingControls({ fill, onFillChange }: BuyingControlsProps) {
 
         <OptionGroup label="Quantity">
           <div
-            className="flex gap-3"
+            className="flex min-w-0 gap-2 sm:gap-3"
             role="radiogroup"
             aria-label="Quantity"
           >
@@ -139,7 +139,7 @@ function BuyingControls({ fill, onFillChange }: BuyingControlsProps) {
           Add to cart
         </Button>
 
-        <TrustRow />
+        <TrustRow layout="inline" />
       </div>
     </div>
   )
@@ -149,7 +149,7 @@ export function BuyingModule() {
   const [fill, setFill] = useState<Fill>("down-feather")
 
   return (
-    <section id="product" className="bg-beige-50 section-light py-10 lg:py-20">
+    <section id="product" className="scroll-mt-12 bg-beige-50 section-light py-16 lg:py-20">
       <PageContainer>
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
           <ProductGallery key={fill} fill={fill} />

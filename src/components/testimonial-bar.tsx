@@ -94,7 +94,7 @@ export function TestimonialBar() {
   )
 
   return (
-    <div className="bg-beige-comp py-4">
+    <div className="overflow-x-hidden bg-beige-comp py-6">
       <PageContainer>
         <div className="flex items-center gap-8">
           <span className="text-eyebrow shrink-0 text-fluff-500">As seen in</span>
